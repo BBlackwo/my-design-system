@@ -1,0 +1,61 @@
+{
+  "name": "@my-design-system/monorepo",
+  "private": true,
+  "repository": "https://github.com/BBlackwo/my-design-system.git",
+  "author": "Benjamin Blackwood benjamin@blackwoods.us",
+  "contributors": [
+    "Benjamin Blackwood benjamin@blackwoods.us"
+  ],
+  "resolutions": {
+    "postcss-markdown": "https://github.com/gucong3000/postcss-markdown"
+  },
+  "license": "MIT",
+  "scripts": {
+    "create": "ds create component",
+    "create:package": "ds create package",
+    "clean": "ds clean",
+    "dev": "ds dev",
+    "start": "lerna run start --parallel",
+    "storybook": "ds storybook start",
+    "playroom": "ds playroom start",
+    "lint": "ds lint",
+    "test": "ds test",
+    "build": "lerna run build --stream",
+    "build:storybook": "ds storybook build",
+    "build:playroom": "ds playroom build",
+    "size": "ds size"
+  },
+  "workspaces": [
+    "components/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "auto": "7.4.4",
+    "@design-systems/cli": "1.0.0",
+    "@testing-library/react": "8.0.4",
+    "@types/react-dom": "16.8.4",
+    "husky": "2.7.0",
+    "prettier": "1.18.2",
+    "lerna": "3.15.0",
+    "lint-staged": "^9.0.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts,tsx,jsx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "jest-junit": {
+    "output": "./coverage/target/surefire-reports/junit.xml"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "@my-design-system/babel-preset",
+  "description": "Automatically load the css for the @my-design-system design system.",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BBlackwo/my-design-system.git",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "!*.test.*",
+    "!__snapshots__",
+    "!__tests__"
+  ],
+  "dependencies": {
+    "@design-systems/babel-plugin-include-styles": "1.0.0"
+  }
+}
